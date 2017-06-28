@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">英雄联盟助手</string>
+    <string name="lol_host">http://ossweb-img.qq.com/upload/qqtalk/lol_hero/</string>
+    <string name="title_activity_good_detail">商品详情</string>
+    <string name="gooddetail_info_tip">物品描述</string>
+    <string name="gooddetail_advance_tip">可合成物品</string>
+
+    <string name="goodsortbymap">全部地图</string>
+    <string name="goodsortbyprop">全部物品</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+</resources>
