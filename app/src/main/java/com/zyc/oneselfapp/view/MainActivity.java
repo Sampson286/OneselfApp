@@ -37,6 +37,10 @@ import okhttp3.ResponseBody;
 import rx.Observable;
 import rx.functions.Func1;
 
+/**
+ * Created by zyc on 2016/12/23.
+ * 主页
+ */
 public class MainActivity extends BaseActivity {
     private String TAG = "MainActivity";
     @BindView(R.id.recyclerview)
