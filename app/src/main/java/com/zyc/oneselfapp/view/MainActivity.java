@@ -68,6 +68,7 @@ public class MainActivity extends BaseActivity {
     MainRecyclerViewAdapter adapter;
     MainPopupRecyclerAdapter mainPopupRecyclerAdapter;
     PopupWindow popupWindow;
+    boolean currentSelectLeft=false;
     private final int MY_PERMISSIONS_REQUEST_READ_CONTACTS=1;
     String root= FileUtils.getRootFile();
     File rootFile=new File(root);
@@ -193,6 +194,7 @@ public class MainActivity extends BaseActivity {
     void Onclick(View view) {
         switch (view.getId()) {
             case R.id.main_activity_top_ll_left:
+                currentSelectLeft=true;
                 if (!popupWindow.isShowing()) {
                     if (goodsList.getMaps() != null && goodsList.getMaps().size() > 0) {
                         if (!goodsList.getMaps().get(0).equals(CommUtils.getResourceById(R.string.goodsortbymap))) {
@@ -213,6 +215,7 @@ public class MainActivity extends BaseActivity {
                 }
                 break;
             case R.id.main_activity_top_ll_right:
+                currentSelectLeft=false;
                 if (!popupWindow.isShowing()) {
                     if (goodsList.getProps() != null && goodsList.getProps().size() > 0) {
                         if (!goodsList.getProps().get(0).equals(CommUtils.getResourceById(R.string.goodsortbyprop))) {
@@ -245,7 +248,11 @@ public class MainActivity extends BaseActivity {
             }
             mainPopupRecyclerAdapter.setSelectIndex(position);
             view1.setSelected(true);
-            main_activity_top_ll_left_text.setText(mainPopupRecyclerAdapter.getList().get(position));
+            if(currentSelectLeft){
+                main_activity_top_ll_left_text.setText(mainPopupRecyclerAdapter.getList().get(position));
+            }else{
+                main_activity_top_ll_right_text.setText(mainPopupRecyclerAdapter.getList().get(position));
+            }
             adapter.setGoodsList(goodsList);
             adapter.notifyDataSetChanged();
             Toast.makeText(MainActivity.this, mainPopupRecyclerAdapter.getList().get(position), Toast.LENGTH_LONG).show();
